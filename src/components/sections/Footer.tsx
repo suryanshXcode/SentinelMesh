@@ -1,72 +1,37 @@
-import { Shield } from "lucide-react";
+import React from "react";
+import { motion } from "framer-motion";
+import { Activity, AlertTriangle, ArrowRight, BrainCircuit, CheckCircle2, ChevronRight, CircleDot, Database, Eye, FileSearch, Fingerprint, GitBranch, Layers3, Lock, Network, Radar, Search, Shield, ShieldAlert, ShieldCheck, Sparkles, Target, Terminal, UserCheck, Workflow, Zap } from "lucide-react";
+import Badge from "../ui/Badge";
+import SectionHeading from "../ui/SectionHeading";
+import { stages, workspaceItems, workflow } from "../constants";
 
-export function Footer() {
+export default function Footer() {
   return (
-    <footer className="bg-bg-white border-t border-border-subtle pt-16 pb-8">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 mb-16">
-          
-          {/* Brand Column */}
-          <div className="lg:col-span-2">
-            <div className="flex items-center gap-2 mb-6">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-soft-green text-primary">
-                <Shield className="h-5 w-5" />
-              </div>
-              <span className="text-xl font-bold tracking-tight text-text-primary">
-                SentinelMesh
-              </span>
+    <>
+      <footer className="border-t border-white/10 bg-slate-950">
+        <div className="mx-auto flex max-w-7xl flex-col gap-5 px-5 py-8 sm:px-8 md:flex-row md:items-center md:justify-between lg:px-10">
+          <div className="flex items-center gap-3">
+            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/5">
+              <Shield className="h-4 w-4 text-emerald-400" />
             </div>
-            <p className="text-sm text-text-secondary mb-6 max-w-sm leading-relaxed">
-              Designed for modern Security Operations. <br />
-              Transform alerts into intelligence and investigate incidents with evidence-backed clarity.
-            </p>
+
+            <div>
+              <p className="text-sm font-bold text-white">
+                Sentinel<span className="text-emerald-400">Mesh</span>
+              </p>
+
+              <p className="text-[9px] uppercase tracking-[0.18em] text-slate-600">
+                Security Incident Intelligence
+              </p>
+            </div>
           </div>
 
-          {/* Links Columns */}
-          <div>
-            <h4 className="font-bold text-text-primary mb-4 text-sm">Product</h4>
-            <ul className="space-y-3 text-sm text-text-secondary">
-              <li><a href="#" className="hover:text-primary transition-colors">Features</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Architecture</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">AI Investigator</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Integrations</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Pricing</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-bold text-text-primary mb-4 text-sm">Resources</h4>
-            <ul className="space-y-3 text-sm text-text-secondary">
-              <li><a href="#" className="hover:text-primary transition-colors">Documentation</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Blog</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Threat Intel</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">API Reference</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-bold text-text-primary mb-4 text-sm">Company</h4>
-            <ul className="space-y-3 text-sm text-text-secondary">
-              <li><a href="#" className="hover:text-primary transition-colors">About Us</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Contact</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Careers</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Trust Center</a></li>
-            </ul>
-          </div>
-
+          <p className="text-xs text-slate-600">
+            Security intelligence • Investigation • Evidence
+          </p>
         </div>
+      </footer>
 
-        <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-border-subtle text-xs text-text-secondary gap-4">
-          <div>
-            &copy; {new Date().getFullYear()} SentinelMesh, Inc. All rights reserved.
-          </div>
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-primary transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-primary transition-colors">Cookie Settings</a>
-          </div>
-        </div>
-      </div>
-    </footer>
+    </>
   );
 }

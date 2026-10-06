@@ -1,22 +1,22 @@
 import { BrainCircuit, CheckCircle2, Shield, Search, FileText } from "lucide-react";
 
-export function AIInvestigator() {
+export default function AIInvestigator() {
   return (
     <section className="py-24 bg-bg-white border-b border-border-subtle overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-center">
-        
+
         {/* Left Column: Description */}
         <div>
           <div className="inline-flex items-center rounded-full border border-accent-ai/20 bg-soft-purple px-3 py-1 text-sm font-semibold text-accent-ai mb-6">
             <BrainCircuit className="mr-2 h-4 w-4" />
             AI Investigation Assistant
           </div>
-          
+
           <h2 className="text-3xl md:text-4xl font-bold text-text-primary tracking-tight mb-6">
             Investigation Assistance, <br />
             <span className="text-gradient-ai">Grounded in Evidence.</span>
           </h2>
-          
+
           <p className="text-lg text-text-secondary mb-8 leading-relaxed">
             The AI Investigator acts as a force multiplier for your team. It accelerates analysis by parsing vast amounts of correlated data and generating natural language summaries, but it never makes authoritative decisions without showing its work.
           </p>
@@ -106,7 +106,7 @@ export function AIInvestigator() {
 
           </div>
         </div>
-        
+
       </div>
     </section>
   );

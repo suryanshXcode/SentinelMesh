@@ -1,145 +1,213 @@
-import { ArrowRight, ShieldCheck, Activity, Search, BrainCircuit, Network } from "lucide-react";
-import { Button } from "@/components/ui/Button";
+import React from "react";
+import { motion } from "framer-motion";
+import { Activity, AlertTriangle, ArrowRight, BrainCircuit, CheckCircle2, ChevronRight, CircleDot, Database, Eye, FileSearch, Fingerprint, GitBranch, Layers3, Lock, Network, Radar, Search, Shield, ShieldAlert, ShieldCheck, Sparkles, Target, Terminal, UserCheck, Workflow, Zap } from "lucide-react";
+import Badge from "../ui/Badge";
+import SectionHeading from "../ui/SectionHeading";
+import { stages, workspaceItems, workflow } from "../constants";
 
-export function Hero() {
+export default function Hero({ activeStage, setActiveStage, setIsPaused }: { activeStage: number, setActiveStage: (stage: number) => void, setIsPaused?: (v: boolean) => void }) {
   return (
-    <section className="relative pt-32 pb-24 overflow-hidden bg-bg-main">
-      {/* Background patterns and subtle gradients */}
-      <div className="absolute inset-0 bg-gradient-to-br from-soft-green/50 via-bg-main to-soft-blue/50" />
-      <div className="absolute top-0 right-0 -translate-y-12 translate-x-1/3 w-[800px] h-[800px] bg-primary/5 rounded-full blur-3xl opacity-50 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 translate-y-1/3 -translate-x-1/3 w-[600px] h-[600px] bg-secondary/5 rounded-full blur-3xl opacity-50 pointer-events-none" />
-
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-center z-10">
-        
-        {/* Left Column: Copy & CTAs */}
-        <div className="flex flex-col items-start text-left">
-          <div className="inline-flex items-center rounded-full border border-primary/20 bg-soft-green px-3 py-1 text-[13px] font-semibold tracking-wide text-primary mb-6">
-            <ShieldCheck className="mr-1.5 h-4 w-4" />
-            SECURITY INCIDENT INTELLIGENCE PLATFORM
-          </div>
-          
-          <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold text-text-primary tracking-tight mb-6 leading-[1.1]">
-            Smarter Detection. <br />
-            <span className="text-gradient">Faster Investigation.</span>
-          </h1>
-          
-          <p className="text-lg lg:text-xl text-text-secondary mb-10 max-w-xl leading-relaxed">
-            SentinelMesh transforms security alerts into correlated, prioritized, evidence-backed incidents—helping analysts understand what happened, why it matters, and what to investigate next.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mb-8">
-            <Button size="lg" className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-white shadow-md shadow-primary/20">
-              Get Started <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            <Button size="lg" variant="outline" className="w-full sm:w-auto bg-bg-white border-border-subtle text-text-primary hover:bg-gray-50 shadow-sm">
-              Explore Architecture
-            </Button>
-          </div>
-
-          <div className="text-sm font-medium text-text-secondary flex items-center gap-2">
-            <span>Deterministic security intelligence</span>
-            <span className="w-1 h-1 rounded-full bg-border-subtle" />
-            <span>Evidence-backed investigation</span>
-            <span className="w-1 h-1 rounded-full bg-border-subtle" />
-            <span>Grounded AI</span>
-          </div>
+    <>
+      <section className="relative isolate overflow-hidden">
+        {/* background decoration */}
+        <div className="pointer-events-none absolute inset-0 -z-10">
+          <div className="absolute left-1/2 top-0 h-[500px] w-[800px] -translate-x-1/2 rounded-full bg-emerald-200/20 blur-3xl" />
+          <div className="absolute right-0 top-40 h-[350px] w-[350px] rounded-full bg-cyan-200/20 blur-3xl" />
         </div>
 
-        {/* Right Column: Isometric Dashboard Visualization */}
-        <div className="relative w-full h-[500px] lg:h-[600px] hidden md:block">
-          
-          {/* Main Dashboard Mockup */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-bg-white rounded-2xl border border-border-subtle shadow-2xl overflow-hidden flex flex-col transform perspective-1000 rotate-y-[-5deg] rotate-x-[5deg]">
-            {/* Header */}
-            <div className="h-12 border-b border-border-subtle flex items-center px-4 bg-gray-50">
-              <div className="flex gap-1.5">
-                <div className="w-2.5 h-2.5 rounded-full bg-red-400" />
-                <div className="w-2.5 h-2.5 rounded-full bg-yellow-400" />
-                <div className="w-2.5 h-2.5 rounded-full bg-green-400" />
+        <div className="mx-auto max-w-7xl px-5 pb-16 pt-20 sm:px-8 lg:px-10 lg:pb-24 lg:pt-28">
+          <div className="grid items-center gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+            {/* LEFT */}
+            <div>
+              <Badge>SECURITY INCIDENT INTELLIGENCE</Badge>
+
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                className="mt-7 max-w-3xl text-5xl font-bold leading-[0.98] tracking-[-0.045em] text-slate-950 dark:text-white sm:text-6xl lg:text-[70px] transition-colors duration-300"
+              >
+                Smarter Detection.
+                <br />
+                <span className="text-emerald-600 dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-emerald-400 dark:to-cyan-400 transition-colors duration-300">Faster Investigation.</span>
+              </motion.h1>
+
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+                className="mt-7 max-w-xl text-base leading-8 text-slate-600 dark:text-slate-400 sm:text-lg transition-colors duration-300"
+              >
+                SentinelMesh transforms large volumes of security alerts into
+                correlated, prioritized and evidence-backed incidents so
+                analysts can understand what happened and act faster.
+              </motion.p>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                className="mt-8 flex flex-col gap-3 sm:flex-row"
+              >
+                <a
+                  href="#platform"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-slate-950 text-white dark:bg-emerald-500 px-6 py-3.5 text-sm font-semibold dark:text-slate-950 shadow-xl shadow-slate-950/10 dark:shadow-[0_0_20px_rgba(16,185,129,0.3)] transition hover:-translate-y-0.5 hover:bg-slate-800 dark:hover:bg-emerald-400 dark:hover:shadow-[0_0_30px_rgba(16,185,129,0.5)]"
+                >
+                  Explore SentinelMesh
+                  <ArrowRight className="h-4 w-4" />
+                </a>
+
+                <a
+                  href="#architecture"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white text-slate-700 hover:border-slate-300 hover:bg-slate-50 dark:border-white/10 dark:bg-white/5 px-6 py-3.5 text-sm font-semibold dark:text-slate-300 backdrop-blur-sm transition dark:hover:border-white/20 dark:hover:bg-white/10 dark:hover:text-white"
+                >
+                  View Architecture
+                </a>
+              </motion.div>
+
+              <div className="mt-10 flex flex-wrap gap-x-7 gap-y-3 text-xs font-semibold uppercase tracking-[0.14em] text-slate-400">
+                <span className="flex items-center gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-500" />
+                  Evidence-backed
+                </span>
+
+                <span className="flex items-center gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-500" />
+                  Analyst-first
+                </span>
+
+                <span className="flex items-center gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-500" />
+                  AI-assisted
+                </span>
               </div>
-              <div className="ml-4 w-48 h-5 bg-white border border-border-subtle rounded-md shadow-sm" />
             </div>
-            {/* Body */}
-            <div className="flex-1 flex bg-gray-50/50 p-4 gap-4">
-              {/* Sidebar */}
-              <div className="w-32 flex flex-col gap-2">
-                <div className="h-6 w-full bg-primary/10 rounded-md" />
-                <div className="h-6 w-3/4 bg-border-subtle/50 rounded-md" />
-                <div className="h-6 w-5/6 bg-border-subtle/50 rounded-md" />
-                <div className="h-6 w-2/3 bg-border-subtle/50 rounded-md" />
-              </div>
-              {/* Main Content */}
-              <div className="flex-1 flex flex-col gap-4">
-                {/* Stats Row */}
-                <div className="flex gap-4">
-                  <div className="flex-1 h-20 bg-white border border-border-subtle rounded-xl shadow-sm p-3 flex flex-col justify-between">
-                    <div className="w-6 h-6 rounded bg-red-100" />
-                    <div className="w-12 h-4 bg-gray-200 rounded" />
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+              className="relative"
+            >
+              <div className="rounded-[30px] border border-slate-200 bg-white shadow-2xl shadow-slate-900/10 dark:border-white/10 dark:bg-slate-900/50 p-3 dark:shadow-emerald-500/5 backdrop-blur-md transition-colors duration-300">
+                <div className="overflow-hidden rounded-[22px] bg-slate-950">
+                  <div className="flex items-center justify-between border-b border-white/10 px-5 py-4">
+                    <div className="flex items-center gap-3">
+                      <div className="flex gap-1.5">
+                        <span className="h-2.5 w-2.5 rounded-full bg-red-400/70" />
+                        <span className="h-2.5 w-2.5 rounded-full bg-amber-400/70" />
+                        <span className="h-2.5 w-2.5 rounded-full bg-emerald-400/70" />
+                      </div>
+
+                      <span className="text-xs font-semibold text-slate-400">
+                        sentinelmesh / intelligence-engine
+                      </span>
+                    </div>
+
+                    <span className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.16em] text-emerald-400">
+                      <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
+                      LIVE
+                    </span>
                   </div>
-                  <div className="flex-1 h-20 bg-white border border-border-subtle rounded-xl shadow-sm p-3 flex flex-col justify-between">
-                    <div className="w-6 h-6 rounded bg-yellow-100" />
-                    <div className="w-12 h-4 bg-gray-200 rounded" />
-                  </div>
-                  <div className="flex-1 h-20 bg-white border border-border-subtle rounded-xl shadow-sm p-3 flex flex-col justify-between">
-                    <div className="w-6 h-6 rounded bg-green-100" />
-                    <div className="w-12 h-4 bg-gray-200 rounded" />
+
+                  <div className="p-5 sm:p-7">
+                    <div className="mb-6 grid grid-cols-3 gap-3">
+                      {[
+                        ["Alerts", "12,842"],
+                        ["Correlated", "384"],
+                        ["Incidents", "27"],
+                      ].map(([label, value]) => (
+                        <div
+                          key={label}
+                          className="rounded-2xl border border-white/10 bg-white/[0.035] p-4"
+                        >
+                          <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-slate-500">
+                            {label}
+                          </p>
+                          <p className="mt-2 text-lg font-bold text-white">
+                            {value}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="rounded-2xl border border-white/10 bg-white/[0.025] p-5">
+                      <div className="mb-5 flex items-center justify-between">
+                        <div>
+                          <p className="text-sm font-semibold text-white">
+                            Incident intelligence
+                          </p>
+                          <p className="mt-1 text-xs text-slate-500">
+                            Correlation pipeline
+                          </p>
+                        </div>
+
+                        <Activity className="h-5 w-5 text-emerald-400" />
+                      </div>
+
+                      <div className="space-y-4">
+                        {stages.map((stage, index) => {
+                          const Icon = stage.icon;
+                          const isActive = index === activeStage;
+
+                          return (
+                            <button
+                              key={stage.id}
+                              onClick={() => setActiveStage(index)}
+                              className="flex w-full items-center gap-3 text-left"
+                            >
+                              <div
+                                className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border transition ${isActive
+                                  ? "border-emerald-400/30 bg-emerald-400/10 text-emerald-400"
+                                  : "border-white/10 bg-white/[0.03] text-slate-600"
+                                  }`}
+                              >
+                                <Icon className="h-4 w-4" />
+                              </div>
+
+                              <div className="min-w-0 flex-1">
+                                <div className="flex items-center justify-between gap-3">
+                                  <span
+                                    className={`truncate text-xs font-medium ${isActive
+                                      ? "text-white"
+                                      : "text-slate-500"
+                                      }`}
+                                  >
+                                    {stage.title}
+                                  </span>
+
+                                  <span
+                                    className={`text-[9px] font-bold ${isActive
+                                      ? "text-emerald-400"
+                                      : "text-slate-700"
+                                      }`}
+                                  >
+                                    {isActive ? "ACTIVE" : "READY"}
+                                  </span>
+                                </div>
+
+                                <div className="mt-2 h-1 overflow-hidden rounded-full bg-white/5">
+                                  <motion.div
+                                    animate={{
+                                      width: isActive ? "78%" : "22%",
+                                    }}
+                                    className="h-full rounded-full bg-emerald-400/60"
+                                    transition={{ duration: 0.5 }}
+                                  />
+                                </div>
+                              </div>
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </div>
                   </div>
                 </div>
-                {/* Graph Area */}
-                <div className="flex-1 bg-white border border-border-subtle rounded-xl shadow-sm relative overflow-hidden">
-                  <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-primary/10 to-transparent" />
-                  <svg className="absolute inset-0 w-full h-full" preserveAspectRatio="none" viewBox="0 0 100 100">
-                    <path d="M0,80 Q25,50 50,70 T100,20 L100,100 L0,100 Z" fill="rgba(16, 185, 129, 0.1)" />
-                    <path d="M0,80 Q25,50 50,70 T100,20" fill="none" stroke="#10B981" strokeWidth="2" />
-                  </svg>
-                </div>
               </div>
-            </div>
+            </motion.div>
           </div>
-
-          {/* Floating Info Cards */}
-          <div className="absolute top-10 left-0 bg-white p-3 rounded-xl shadow-lg border border-border-subtle flex items-center gap-3 animate-float-slow">
-            <div className="w-8 h-8 rounded-full bg-soft-green flex items-center justify-center text-primary">
-              <Activity className="w-4 h-4" />
-            </div>
-            <div>
-              <div className="text-xs font-bold text-text-primary">Real-time</div>
-              <div className="text-[10px] text-text-secondary">Threat Detection</div>
-            </div>
-          </div>
-
-          <div className="absolute top-32 -right-4 bg-white p-3 rounded-xl shadow-lg border border-border-subtle flex items-center gap-3 animate-float-delayed">
-            <div className="w-8 h-8 rounded-full bg-soft-blue flex items-center justify-center text-accent">
-              <Network className="w-4 h-4" />
-            </div>
-            <div>
-              <div className="text-xs font-bold text-text-primary">Attack Graph</div>
-              <div className="text-[10px] text-text-secondary">Visualization</div>
-            </div>
-          </div>
-
-          <div className="absolute bottom-20 -left-6 bg-white p-3 rounded-xl shadow-lg border border-border-subtle flex items-center gap-3 animate-float">
-            <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-600">
-              <Search className="w-4 h-4" />
-            </div>
-            <div>
-              <div className="text-xs font-bold text-text-primary">Evidence-backed</div>
-              <div className="text-[10px] text-text-secondary">Investigation</div>
-            </div>
-          </div>
-
-          <div className="absolute bottom-4 right-10 bg-white p-3 rounded-xl shadow-lg border border-border-subtle flex items-center gap-3 animate-float-slow">
-            <div className="w-8 h-8 rounded-full bg-soft-purple flex items-center justify-center text-accent-ai">
-              <BrainCircuit className="w-4 h-4" />
-            </div>
-            <div>
-              <div className="text-xs font-bold text-text-primary">AI Investigation</div>
-              <div className="text-[10px] text-text-secondary">Assistant</div>
-            </div>
-          </div>
-
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

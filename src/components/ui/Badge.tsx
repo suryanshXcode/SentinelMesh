@@ -1,32 +1,15 @@
-import { HTMLAttributes, forwardRef } from "react";
-import { cn } from "@/lib/utils";
+import React from "react";
 
-export interface BadgeProps extends HTMLAttributes<HTMLDivElement> {
-  variant?: "default" | "success" | "warning" | "destructive" | "outline" | "teal";
-}
-
-const Badge = forwardRef<HTMLDivElement, BadgeProps>(
-  ({ className, variant = "default", ...props }, ref) => {
-    return (
-      <div
-        ref={ref}
-        className={cn(
-          "inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold tracking-wide transition-colors",
-          {
-            "border-transparent bg-primary/10 text-primary": variant === "default",
-            "border-transparent bg-dashboard-success/10 text-dashboard-success": variant === "success",
-            "border-transparent bg-dashboard-warning/10 text-dashboard-warning": variant === "warning",
-            "border-transparent bg-dashboard-critical/10 text-dashboard-critical": variant === "destructive",
-            "border-transparent bg-dashboard-teal/10 text-dashboard-teal": variant === "teal",
-            "text-text-secondary border-border-subtle bg-bg-main": variant === "outline",
-          },
-          className
-        )}
-        {...props}
-      />
+export default function Badge({ children, dark }: { children: React.ReactNode; dark?: boolean; }) {
+  return (
+    <span
+      className={`inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-xs font-semibold tracking-[0.16em] ${dark
+          ? "border-white/10 bg-white/[0.04] text-slate-300"
+          : "border-slate-200 bg-white text-slate-600"
+        }`}
+    >
+      <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+      {children}
+    </span>
     );
-  }
-);
-Badge.displayName = "Badge";
-
-export { Badge };
+}

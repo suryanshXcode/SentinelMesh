@@ -1,31 +1,63 @@
-import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/Button";
+import React from "react";
+import { motion } from "framer-motion";
+import { Activity, AlertTriangle, ArrowRight, BrainCircuit, CheckCircle2, ChevronRight, CircleDot, Database, Eye, FileSearch, Fingerprint, GitBranch, Layers3, Lock, Network, Radar, Search, Shield, ShieldAlert, ShieldCheck, Sparkles, Target, Terminal, UserCheck, Workflow, Zap } from "lucide-react";
+import Badge from "../ui/Badge";
+import SectionHeading from "../ui/SectionHeading";
+import { stages, workspaceItems, workflow } from "../constants";
 
-export function CTA() {
+export default function CTA() {
   return (
-    <section className="relative py-24 overflow-hidden border-b border-border-subtle">
-      {/* Background with Emerald gradient */}
-      <div className="absolute inset-0 bg-bg-main" />
-      <div className="absolute inset-0 bg-gradient-to-br from-soft-green via-transparent to-soft-blue opacity-80" />
-      <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-[800px] h-[800px] bg-primary/10 rounded-full blur-3xl opacity-60 pointer-events-none" />
+    <>
+      <section id="demo" className="bg-slate-950 py-20 sm:py-24">
+        <div className="mx-auto max-w-5xl px-5 text-center sm:px-8">
+          <Badge dark>SECURITY INTELLIGENCE PLATFORM</Badge>
 
-      <div className="relative max-w-4xl mx-auto px-6 lg:px-8 text-center z-10">
-        <h2 className="text-4xl md:text-5xl font-bold text-text-primary tracking-tight mb-6 leading-tight">
-          Ready to Upgrade Your SOC?
-        </h2>
-        <p className="text-xl text-text-secondary mb-10 max-w-2xl mx-auto">
-          See how SentinelMesh cuts investigation time by 80% and helps analysts make confident, evidence-backed decisions.
-        </p>
-        
-        <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <Button size="lg" className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-white shadow-lg shadow-primary/20 text-base h-14 px-8">
-            Request a Demo <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
-          <Button size="lg" variant="outline" className="w-full sm:w-auto bg-bg-white border-border-subtle text-text-primary hover:bg-gray-50 text-base h-14 px-8">
-            View Documentation
-          </Button>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mt-7 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl"
+          >
+            Turn security signals into
+            <span className="text-emerald-400 drop-shadow-[0_0_15px_rgba(16,185,129,0.3)]"> actionable intelligence.</span>
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="mx-auto mt-6 max-w-2xl text-base leading-7 text-slate-400 sm:text-lg"
+          >
+            SentinelMesh gives analysts a connected path from detection to
+            evidence-backed investigation and response.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="mt-9 flex flex-col justify-center gap-3 sm:flex-row"
+          >
+            <a
+              href="#platform"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-500 px-6 py-3.5 text-sm font-bold text-slate-950 shadow-[0_0_20px_rgba(16,185,129,0.3)] transition hover:-translate-y-0.5 hover:bg-emerald-400 hover:shadow-[0_0_30px_rgba(16,185,129,0.5)]"
+            >
+              Explore Working Model
+              <ArrowRight className="h-4 w-4" />
+            </a>
+
+            <a
+              href="#architecture"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition hover:border-white/20 hover:bg-white/10"
+            >
+              View Architecture
+            </a>
+          </motion.div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

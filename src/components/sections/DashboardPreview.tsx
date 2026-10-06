@@ -1,4 +1,4 @@
-import { Shield, Home, AlertTriangle, Bell, Network, Briefcase, FileSearch, FileText, Settings, ChevronDown, BellRing, User, ArrowUpRight, Search, MessageSquare, Send, BrainCircuit } from "lucide-react";
+import { Shield, Home, AlertTriangle, Bell, Network, Briefcase, FileSearch, FileText, Settings, ChevronDown, BellRing, ArrowUpRight, Search, MessageSquare, Send, BrainCircuit } from "lucide-react";
 
 export function DashboardPreview() {
   return (
@@ -15,14 +15,14 @@ export function DashboardPreview() {
 
         {/* Dashboard Container - Forced Dark Theme Palette */}
         <div className="w-full rounded-2xl overflow-hidden shadow-2xl border border-border-subtle/50 text-[#F8FAFC] font-sans flex flex-col" style={{ backgroundColor: "#081B2B", height: "800px" }}>
-          
+
           {/* Topbar */}
           <div className="h-14 flex items-center justify-between px-4" style={{ backgroundColor: "#111827", borderBottom: "1px solid #1F2937" }}>
             <div className="flex items-center gap-2 text-[#14B8A6]">
               <Shield className="w-6 h-6" />
               <span className="font-bold text-lg text-[#F8FAFC]">SentinelMesh</span>
             </div>
-            
+
             <div className="flex-1 max-w-2xl mx-8">
               <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm" style={{ backgroundColor: "#1F2937", border: "1px solid #334155" }}>
                 <Search className="w-4 h-4 text-[#94A3B8]" />
@@ -64,13 +64,13 @@ export function DashboardPreview() {
               <SidebarItem icon={FileText} label="Reports" />
               <div className="mt-auto" />
               <SidebarItem icon={Settings} label="Settings" />
-              
+
               <div className="mt-4 p-3 rounded-xl flex items-center gap-3 text-xs" style={{ backgroundColor: "#111827", border: "1px solid #1F2937" }}>
-                 <div className="w-2 h-2 rounded-full" style={{ backgroundColor: "#22C55E" }} />
-                 <div>
-                   <div className="text-[#F8FAFC]">System Online</div>
-                   <div className="text-[#94A3B8]">Last updated: 2 min ago</div>
-                 </div>
+                <div className="w-2 h-2 rounded-full" style={{ backgroundColor: "#22C55E" }} />
+                <div>
+                  <div className="text-[#F8FAFC]">System Online</div>
+                  <div className="text-[#94A3B8]">Last updated: 2 min ago</div>
+                </div>
               </div>
             </div>
 
@@ -96,11 +96,11 @@ export function DashboardPreview() {
                 <div className="col-span-1 rounded-xl p-4 flex flex-col" style={{ backgroundColor: "#111827", border: "1px solid #1F2937" }}>
                   <div className="text-sm font-semibold mb-4 text-[#F8FAFC]">Incident & Alert Trend</div>
                   <div className="flex-1 relative border-l border-b flex items-end" style={{ borderColor: "#334155" }}>
-                     {/* SVG Mock of a line chart */}
-                     <svg className="w-full h-full absolute inset-0" viewBox="0 0 100 100" preserveAspectRatio="none">
-                       <path d="M0,80 L20,70 L40,85 L60,40 L80,50 L100,20" fill="none" stroke="#3B82F6" strokeWidth="2" />
-                       <path d="M0,90 L20,85 L40,95 L60,70 L80,80 L100,60" fill="none" stroke="#14B8A6" strokeWidth="2" />
-                     </svg>
+                    {/* SVG Mock of a line chart */}
+                    <svg className="w-full h-full absolute inset-0" viewBox="0 0 100 100" preserveAspectRatio="none">
+                      <path d="M0,80 L20,70 L40,85 L60,40 L80,50 L100,20" fill="none" stroke="#3B82F6" strokeWidth="2" />
+                      <path d="M0,90 L20,85 L40,95 L60,70 L80,80 L100,60" fill="none" stroke="#14B8A6" strokeWidth="2" />
+                    </svg>
                   </div>
                 </div>
 
@@ -174,7 +174,7 @@ export function DashboardPreview() {
                       </div>
                       <span className="text-xs text-[#3B82F6] flex items-center cursor-pointer">View All <ArrowUpRight className="w-3 h-3 ml-1" /></span>
                     </div>
-                    
+
                     <div className="flex-1 flex flex-col gap-3 text-xs">
                       {/* User Message */}
                       <div className="flex justify-end">
@@ -185,7 +185,7 @@ export function DashboardPreview() {
                       {/* AI Response */}
                       <div className="flex gap-2">
                         <div className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: "rgba(139, 92, 246, 0.2)" }}>
-                           <Shield className="w-3 h-3 text-[#8B5CF6]" />
+                          <Shield className="w-3 h-3 text-[#8B5CF6]" />
                         </div>
                         <div className="px-3 py-2 rounded-xl rounded-tl-sm text-[#F8FAFC] flex-1 leading-relaxed" style={{ backgroundColor: "rgba(14, 165, 233, 0.1)" }}>
                           In the last 24 hours, 34 incidents were created, with 8 marked as critical. The most critical incident is <span className="text-[#3B82F6]">INC-001</span>, involving suspicious PowerShell activity on DB-01. It is linked to MITRE technique T1059.001 and affects a high-value asset.

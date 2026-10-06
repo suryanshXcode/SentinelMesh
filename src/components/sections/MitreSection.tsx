@@ -1,4 +1,4 @@
-import { ArrowRight, Crosshair } from "lucide-react";
+import { Crosshair } from "lucide-react";
 
 const mitreStages = [
   {
