@@ -8,19 +8,19 @@ import { stages, workspaceItems, workflow } from "../constants";
 export default function CTA() {
   return (
     <>
-      <section id="demo" className="bg-slate-950 py-20 sm:py-24">
+      <section id="demo" className="bg-slate-50 dark:bg-slate-950 py-20 sm:py-24 transition-colors duration-300">
         <div className="mx-auto max-w-5xl px-5 text-center sm:px-8">
-          <Badge dark>SECURITY INTELLIGENCE PLATFORM</Badge>
+          <Badge>SECURITY INTELLIGENCE PLATFORM</Badge>
 
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="mt-7 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl"
+            className="mt-7 text-4xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-5xl lg:text-6xl transition-colors duration-300"
           >
             Turn security signals into
-            <span className="text-emerald-400 drop-shadow-[0_0_15px_rgba(16,185,129,0.3)]"> actionable intelligence.</span>
+            <span className="text-emerald-600 dark:text-emerald-400 dark:drop-shadow-[0_0_15px_rgba(16,185,129,0.3)]"> actionable intelligence.</span>
           </motion.h2>
 
           <motion.p
@@ -28,7 +28,7 @@ export default function CTA() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="mx-auto mt-6 max-w-2xl text-base leading-7 text-slate-400 sm:text-lg"
+            className="mx-auto mt-6 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-400 sm:text-lg transition-colors duration-300"
           >
             SentinelMesh gives analysts a connected path from detection to
             evidence-backed investigation and response.
@@ -51,7 +51,7 @@ export default function CTA() {
 
             <a
               href="#architecture"
-              className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition hover:border-white/20 hover:bg-white/10"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white text-slate-700 hover:bg-slate-50 dark:border-white/10 dark:bg-white/5 px-6 py-3.5 text-sm font-semibold dark:text-white backdrop-blur-sm transition dark:hover:border-white/20 dark:hover:bg-white/10"
             >
               View Architecture
             </a>

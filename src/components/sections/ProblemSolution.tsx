@@ -12,7 +12,7 @@ const sentinelSteps = [
   "Events",
   "Normalization",
   "Detection",
-  "Noise Reduction",
+  "Malware Behaviour Telemetry",
   "Correlation",
   "Incident Creation",
   "Risk Scoring",

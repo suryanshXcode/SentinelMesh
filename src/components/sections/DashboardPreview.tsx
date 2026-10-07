@@ -19,7 +19,7 @@ export function DashboardPreview() {
           {/* Topbar */}
           <div className="h-14 flex items-center justify-between px-4" style={{ backgroundColor: "#111827", borderBottom: "1px solid #1F2937" }}>
             <div className="flex items-center gap-2 text-[#14B8A6]">
-              <Shield className="w-6 h-6" />
+              <img src="/logo.jpeg" alt="Logo" className="h-6 w-6 rounded-md object-contain bg-white" />
               <span className="font-bold text-lg text-[#F8FAFC]">SentinelMesh</span>
             </div>
 

@@ -22,7 +22,7 @@ export default function SystemArchitecture() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="mt-14 overflow-hidden rounded-[30px] border border-slate-200 bg-slate-950 dark:border-white/10 dark:bg-slate-900/60 p-5 shadow-2xl shadow-slate-900/10 dark:shadow-emerald-500/5 backdrop-blur-md sm:p-8 transition-colors duration-300"
+            className="mt-14 overflow-hidden rounded-[30px] border border-slate-200 bg-slate-50 dark:border-white/10 dark:bg-slate-900/60 p-5 shadow-2xl shadow-slate-900/10 dark:shadow-emerald-500/5 backdrop-blur-md sm:p-8 transition-colors duration-300"
           >
             <div className="grid gap-3 md:grid-cols-4">
               {[
@@ -34,9 +34,9 @@ export default function SystemArchitecture() {
                   label: "SECURITY CORE",
                   items: [
                     "Ingestion",
-                    "Validation",
+                    "Normalization",
                     "Detection",
-                    "Noise Reduction",
+                    "Malware Behaviour Telemetry",
                   ],
                 },
                 {
@@ -45,7 +45,7 @@ export default function SystemArchitecture() {
                     "Correlation",
                     "Incident Engine",
                     "Risk Engine",
-                    "Threat Mapping",
+                    "MITRE ATT&CK",
                   ],
                 },
                 {
@@ -60,9 +60,9 @@ export default function SystemArchitecture() {
               ].map((column, index) => (
                 <div
                   key={column.label}
-                  className="rounded-2xl border border-white/10 bg-white/[0.025] p-5"
+                  className="rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-white/10 dark:bg-white/[0.025] dark:shadow-none p-5 transition-colors duration-300"
                 >
-                  <p className="text-[10px] font-bold tracking-[0.18em] text-emerald-400">
+                  <p className="text-[10px] font-bold tracking-[0.18em] text-emerald-600 dark:text-emerald-400 transition-colors duration-300">
                     {column.label}
                   </p>
 
@@ -70,7 +70,7 @@ export default function SystemArchitecture() {
                     {column.items.map((item) => (
                       <div
                         key={item}
-                        className="rounded-xl border border-white/5 bg-white/[0.025] px-3 py-3 text-xs font-medium text-slate-400"
+                        className="rounded-xl border border-slate-100 bg-slate-50 px-3 py-3 text-xs font-medium text-slate-700 dark:border-white/5 dark:bg-white/[0.025] dark:text-slate-400 transition-colors duration-300"
                       >
                         {item}
                       </div>
@@ -79,8 +79,8 @@ export default function SystemArchitecture() {
 
                   {index < 3 && (
                     <div className="mt-4 hidden items-center gap-2 md:flex">
-                      <div className="h-px flex-1 bg-white/10" />
-                      <ArrowRight className="h-3 w-3 text-slate-700" />
+                      <div className="h-px flex-1 bg-slate-200 dark:bg-white/10 transition-colors duration-300" />
+                      <ArrowRight className="h-3 w-3 text-slate-400 dark:text-slate-700 transition-colors duration-300" />
                     </div>
                   )}
                 </div>
@@ -104,10 +104,10 @@ export default function SystemArchitecture() {
               ].map((item) => (
                 <div
                   key={item.title}
-                  className="rounded-2xl border border-white/10 bg-emerald-400/[0.035] p-4"
+                  className="rounded-2xl border border-slate-200 bg-emerald-50/50 p-4 dark:border-white/10 dark:bg-emerald-400/[0.035] transition-colors duration-300"
                 >
-                  <p className="text-xs font-bold text-white">{item.title}</p>
-                  <p className="mt-1 text-[10px] text-slate-600">
+                  <p className="text-xs font-bold text-slate-900 dark:text-white transition-colors duration-300">{item.title}</p>
+                  <p className="mt-1 text-[10px] text-slate-500 dark:text-slate-600 transition-colors duration-300">
                     {item.subtitle}
                   </p>
                 </div>

@@ -21,7 +21,7 @@ const metrics = [
   },
   {
     number: "04",
-    title: "Threat Mapping",
+    title: "MITRE ATT&CK",
     description: "Map observed behaviors to MITRE ATT&CK techniques.",
     icon: Network,
   },

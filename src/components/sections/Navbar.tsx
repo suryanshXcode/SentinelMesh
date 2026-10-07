@@ -5,17 +5,14 @@ import Badge from "../ui/Badge";
 import SectionHeading from "../ui/SectionHeading";
 import { stages, workspaceItems, workflow } from "../constants";
 import { ThemeToggle } from "../ThemeToggle";
-
+import Link from "next/link";
 export default function Navbar() {
   return (
     <>
       <header className="sticky top-0 z-50 border-b border-slate-200/70 bg-[#f7faf9]/90 dark:border-white/10 dark:bg-[#020617]/80 backdrop-blur-xl transition-colors duration-300">
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-8 lg:px-10">
-          <a href="#" className="flex items-center gap-3">
-            <div className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-slate-950 shadow-lg shadow-slate-900/10">
-              <Shield className="h-5 w-5 text-emerald-400" />
-              <span className="absolute right-1.5 top-1.5 h-1.5 w-1.5 rounded-full bg-emerald-400" />
-            </div>
+          <Link href="/home" className="flex items-center gap-3">
+            <img src="/logo.jpeg" alt="Logo" className="h-10 w-10 rounded-xl object-contain bg-white" />
 
             <div>
               <p className="text-base font-bold tracking-tight text-slate-950 dark:text-white transition-colors duration-300">
@@ -25,7 +22,7 @@ export default function Navbar() {
                 Security Intelligence
               </p>
             </div>
-          </a>
+          </Link>
 
           <nav className="hidden items-center gap-8 md:flex">
             <a

@@ -30,7 +30,7 @@ export const stages = [
   },
   {
     id: 3,
-    title: "Threat Mapping",
+    title: "MITRE ATT&CK",
     shortTitle: "MAP",
     description:
       "Maps observed activity to threat techniques and attack behaviors to provide useful investigation context.",

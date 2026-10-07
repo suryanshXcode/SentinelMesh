@@ -89,29 +89,30 @@ export default function Hero({ activeStage, setActiveStage, setIsPaused }: { act
               transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
               className="relative"
             >
-              <div className="rounded-[30px] border border-slate-200 bg-white shadow-2xl shadow-slate-900/10 dark:border-white/10 dark:bg-slate-900/50 p-3 dark:shadow-emerald-500/5 backdrop-blur-md transition-colors duration-300">
-                <div className="overflow-hidden rounded-[22px] bg-slate-950">
-                  <div className="flex items-center justify-between border-b border-white/10 px-5 py-4">
-                    <div className="flex items-center gap-3">
+              <div className="rounded-[32px] border border-slate-200/60 bg-white/40 shadow-[0_20px_50px_rgba(0,0,0,0.1)] dark:border-white/10 dark:bg-slate-900/50 p-4 dark:shadow-[0_20px_50px_rgba(0,0,0,0.5)] backdrop-blur-2xl transition-colors duration-300">
+                <div className="relative overflow-hidden rounded-[24px] bg-white/80 dark:bg-[#060c18] border border-slate-200/50 dark:border-white/5 shadow-inner transition-colors duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 via-transparent to-indigo-500/5 dark:from-emerald-500/10 dark:to-indigo-500/10 pointer-events-none" />
+                  <div className="relative flex items-center justify-between border-b border-slate-200/60 dark:border-white/10 px-6 py-4 bg-slate-50/50 dark:bg-white/[0.02] backdrop-blur-sm transition-colors duration-300">
+                    <div className="flex items-center gap-4">
                       <div className="flex gap-1.5">
-                        <span className="h-2.5 w-2.5 rounded-full bg-red-400/70" />
-                        <span className="h-2.5 w-2.5 rounded-full bg-amber-400/70" />
-                        <span className="h-2.5 w-2.5 rounded-full bg-emerald-400/70" />
+                        <span className="h-3 w-3 rounded-full bg-rose-400/90 shadow-[0_0_10px_rgba(251,113,133,0.3)]" />
+                        <span className="h-3 w-3 rounded-full bg-amber-400/90 shadow-[0_0_10px_rgba(251,191,36,0.3)]" />
+                        <span className="h-3 w-3 rounded-full bg-emerald-400/90 shadow-[0_0_10px_rgba(52,211,153,0.3)]" />
                       </div>
 
-                      <span className="text-xs font-semibold text-slate-400">
+                      <span className="text-xs font-medium text-slate-500 dark:text-slate-400 tracking-wide">
                         sentinelmesh / intelligence-engine
                       </span>
                     </div>
 
-                    <span className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.16em] text-emerald-400">
-                      <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
+                    <span className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-full border border-emerald-500/20 shadow-[0_0_15px_rgba(16,185,129,0.15)] transition-colors duration-300">
+                      <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-500 dark:bg-emerald-400" />
                       LIVE
                     </span>
                   </div>
 
-                  <div className="p-5 sm:p-7">
-                    <div className="mb-6 grid grid-cols-3 gap-3">
+                  <div className="relative p-6 sm:p-8">
+                    <div className="mb-8 grid grid-cols-3 gap-4">
                       {[
                         ["Alerts", "12,842"],
                         ["Correlated", "384"],
@@ -119,30 +120,32 @@ export default function Hero({ activeStage, setActiveStage, setIsPaused }: { act
                       ].map(([label, value]) => (
                         <div
                           key={label}
-                          className="rounded-2xl border border-white/10 bg-white/[0.035] p-4"
+                          className="relative overflow-hidden rounded-2xl border border-slate-200/60 bg-white/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)] backdrop-blur-md dark:border-white/10 dark:bg-white/[0.03] dark:shadow-none p-5 transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:-translate-y-0.5"
                         >
-                          <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-slate-500">
+                          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500">
                             {label}
                           </p>
-                          <p className="mt-2 text-lg font-bold text-white">
+                          <p className="mt-2 text-2xl font-black text-transparent bg-clip-text bg-gradient-to-br from-slate-800 to-slate-500 dark:from-white dark:to-slate-400 transition-colors duration-300">
                             {value}
                           </p>
                         </div>
                       ))}
                     </div>
 
-                    <div className="rounded-2xl border border-white/10 bg-white/[0.025] p-5">
-                      <div className="mb-5 flex items-center justify-between">
+                    <div className="relative rounded-2xl border border-slate-200/60 bg-white/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)] backdrop-blur-md dark:border-white/10 dark:bg-white/[0.02] dark:shadow-none p-6 sm:p-8 transition-colors duration-300">
+                      <div className="mb-8 flex items-center justify-between">
                         <div>
-                          <p className="text-sm font-semibold text-white">
-                            Incident intelligence
+                          <p className="text-lg font-bold text-slate-900 dark:text-white transition-colors duration-300">
+                            Incident Intelligence
                           </p>
-                          <p className="mt-1 text-xs text-slate-500">
+                          <p className="mt-1.5 text-xs font-medium tracking-wide text-slate-500 uppercase">
                             Correlation pipeline
                           </p>
                         </div>
 
-                        <Activity className="h-5 w-5 text-emerald-400" />
+                        <div className="p-3 bg-emerald-500/10 rounded-xl border border-emerald-500/20 shadow-[0_0_20px_rgba(16,185,129,0.15)]">
+                          <Activity className="h-6 w-6 text-emerald-600 dark:text-emerald-400" />
+                        </div>
                       </div>
 
                       <div className="space-y-4">
@@ -154,45 +157,52 @@ export default function Hero({ activeStage, setActiveStage, setIsPaused }: { act
                             <button
                               key={stage.id}
                               onClick={() => setActiveStage(index)}
-                              className="flex w-full items-center gap-3 text-left"
+                              className="group flex w-full items-center gap-4 text-left relative"
                             >
+                              {isActive && (
+                                <motion.div
+                                  layoutId="activeIndicator"
+                                  className="absolute -left-4 h-full w-1 rounded-r-full bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.5)]"
+                                />
+                              )}
+
                               <div
-                                className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border transition ${isActive
-                                  ? "border-emerald-400/30 bg-emerald-400/10 text-emerald-400"
-                                  : "border-white/10 bg-white/[0.03] text-slate-600"
+                                className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border transition-all duration-300 ${isActive
+                                  ? "border-emerald-500/30 bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 shadow-[0_0_15px_rgba(16,185,129,0.2)] scale-110"
+                                  : "border-slate-200/60 bg-slate-100/50 text-slate-500 dark:border-white/10 dark:bg-white/[0.03] group-hover:bg-slate-200/50 dark:group-hover:bg-white/[0.05]"
                                   }`}
                               >
-                                <Icon className="h-4 w-4" />
+                                <Icon className="h-5 w-5" />
                               </div>
 
-                              <div className="min-w-0 flex-1">
+                              <div className="min-w-0 flex-1 ml-1">
                                 <div className="flex items-center justify-between gap-3">
                                   <span
-                                    className={`truncate text-xs font-medium ${isActive
-                                      ? "text-white"
-                                      : "text-slate-500"
+                                    className={`truncate text-[13px] font-bold tracking-wide transition-colors duration-300 ${isActive
+                                      ? "text-slate-900 dark:text-white"
+                                      : "text-slate-500 group-hover:text-slate-700 dark:group-hover:text-slate-300"
                                       }`}
                                   >
                                     {stage.title}
                                   </span>
 
                                   <span
-                                    className={`text-[9px] font-bold ${isActive
-                                      ? "text-emerald-400"
-                                      : "text-slate-700"
+                                    className={`text-[9px] font-black uppercase tracking-[0.2em] transition-colors duration-300 ${isActive
+                                      ? "text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded shadow-[0_0_10px_rgba(16,185,129,0.1)]"
+                                      : "text-slate-400 dark:text-slate-600"
                                       }`}
                                   >
                                     {isActive ? "ACTIVE" : "READY"}
                                   </span>
                                 </div>
 
-                                <div className="mt-2 h-1 overflow-hidden rounded-full bg-white/5">
+                                <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-slate-200/80 dark:bg-white/5 transition-colors duration-300 shadow-inner">
                                   <motion.div
                                     animate={{
-                                      width: isActive ? "78%" : "22%",
+                                      width: isActive ? "100%" : "0%",
                                     }}
-                                    className="h-full rounded-full bg-emerald-400/60"
-                                    transition={{ duration: 0.5 }}
+                                    className="h-full rounded-full bg-gradient-to-r from-emerald-500 to-teal-400 dark:from-emerald-400 dark:to-teal-300 shadow-[0_0_10px_rgba(16,185,129,0.4)]"
+                                    transition={{ duration: 0.8, ease: "easeInOut" }}
                                   />
                                 </div>
                               </div>
